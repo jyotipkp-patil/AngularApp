@@ -1,0 +1,23 @@
+<form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+  <input type="hidden" name="EmployeeID" #EmployeeID="ngModel" [(ngModel)]="service.formData.EmployeeID">
+  <div class="form-group">
+    <label>Training Name</label>
+    <input name="TName"  [(ngModel)]="service.formData.TName" class="form-control" required>
+    <!-- <div class="validation-error" *ngIf="TName.invalid && TName.touched">This field is required.</div> -->
+  </div>
+  <div class="form-group">
+    <label>Start Date</label>
+    
+    <input name="startdate"  type="datetime-local"  [(ngModel)]="service.formData.startdate" class="form-control">
+  </div>
+  <div class="form-group">
+    
+      <label>End Date</label>
+      <input name="enddate" type="datetime-local"  [(ngModel)]="service.formData.enddate" class="form-control">
+    
+    
+  </div>
+  <div class="form-group">
+    <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+  </div>
+</form>
